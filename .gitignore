@@ -1,0 +1,18 @@
+.DS_Store
+Thumbs.db
+
+# Local editor files
+.idea/
+.vscode/
+
+# macOS metadata
+._*
+
+# LaTeX build artifacts (keep the .pdf, drop the rest)
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.out
+build.log
+*.synctex.gz

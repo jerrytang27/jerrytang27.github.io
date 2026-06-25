@@ -1,0 +1,126 @@
+% =====================================================================
+%  Erqiang Tang — Curriculum Vitae
+%  Compile with:  latexmk -pdf cv.tex     (or:  pdflatex cv.tex)
+%  Lightweight academic CV — echoes the warm/minimal homepage aesthetic.
+% =====================================================================
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[sfdefault]{sourcesanspro}       % Source Sans Pro — clean, compact sans
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[margin=1.6cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+
+% ---- Colors (print-friendly: all black, no accent) ------------------
+\definecolor{accent}{HTML}{000000}
+\definecolor{ink}{HTML}{000000}
+\definecolor{muted}{HTML}{595959}
+\color{ink}
+
+\hypersetup{colorlinks=false}
+
+% ---- Section formatting: accent title + rule ------------------------
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}{0em}{}[{\color{accent}\titlerule[0.8pt]}]
+\titlespacing*{\section}{0pt}{14pt}{8pt}
+
+% ---- Helpers --------------------------------------------------------
+\newcommand{\me}{\textbf{E. Tang}}
+\newcommand{\ditto}[1]{\hfill{\color{muted}#1}} % right-aligned dates
+
+% Two-column entry: left content, right-aligned date
+\newcommand{\entry}[2]{%
+  \noindent\begin{minipage}[t]{0.78\textwidth}#1\end{minipage}%
+  \hfill\begin{minipage}[t]{0.20\textwidth}\raggedleft{\color{muted}\small #2}\end{minipage}\par}
+
+\setlist[itemize]{leftmargin=1.2em, topsep=2pt, itemsep=2pt, parsep=0pt}
+\setlength{\parindent}{0pt}
+
+% =====================================================================
+\begin{document}
+
+% ---------------------- Header ---------------------------------------
+{\huge\bfseries Erqiang Tang}\\[6pt]
+{\color{muted}Ph.D. Candidate, Electronic and Computer Engineering (ECE), HKUST}\\[6pt]
+{\small
+\faEnvelope\ etangaa@connect.ust.hk
+}
+
+% ---------------------- Research Interests ---------------------------
+\section{Research Interests}
+My research lies at the intersection of generative modeling and wireless communications,
+with a focus on harnessing modern generative AI techniques for wireless signal processing.
+
+% ---------------------- Education ------------------------------------
+\section{Education}
+\entry{%
+  \textbf{The Hong Kong University of Science and Technology (HKUST)}\\
+  Ph.D. in Electronic and Computer Engineering\\
+  {\color{muted}\small Advisor: Prof.\ Khaled B.\ Letaief}%
+}{2022 -- Present}
+\vspace{6pt}
+\entry{%
+  \textbf{The Hong Kong University of Science and Technology (HKUST)}\\
+  B.Eng.\ in Electronic Engineering, Minor in Design\\
+  {\color{muted}\small CGA: 3.98\,/\,4.30}%
+}{2018 -- 2022}
+
+% ---------------------- Publications ---------------------------------
+\section{Publications}
+{\color{muted}\small $^{*}$ Equal contribution (co-first authors).}
+\begin{enumerate}[leftmargin=1.4em, label=\arabic*., itemsep=6pt]
+  \item T.\ Liao$^{*}$, \me$^{*}$, Z.\ Wang, P.\ Biswas, J.\ Sun, W.\ Guo, J.\ Qian, S.\ Song,
+        J.\ Zhang, K.\ B.\ Letaief.
+        ``Scaling Fluid Antenna Systems: Generative Learning and Decentralized Optimization
+        for Efficient Air-Interface Design.''
+        \textit{Under review.}
+  \item \me, W.\ Guo, H.\ He, S.\ Song, J.\ Zhang, K.\ B.\ Letaief.
+        ``A Unified Two-Stage Generative Diffusion Framework for Channel Estimation and Port
+        Selection in Multiuser MIMO-FAS.''
+        \textit{Under review.}
+  \item \me, W.\ Guo, H.\ He, S.\ Song, J.\ Zhang, K.\ B.\ Letaief.
+        ``Accurate and Fast Channel Estimation for Fluid Antenna Systems with Diffusion Models.''
+        \textit{IEEE Global Communications Conference (GLOBECOM)}, 2025, pp.\ 2066--2071.
+\end{enumerate}
+
+% ---------------------- Teaching -------------------------------------
+\section{Teaching Experience}
+\entry{%
+  \textbf{Teaching Assistant} --- Department of Electronic and Computer Engineering, HKUST%
+}{2022 -- 2023}
+\begin{itemize}
+  \item EESM 5539 --- Wireless Communication Networks
+  \item EESM 5670 --- Advanced Architectures and Designs for Communication Networks
+  \item ELEC 3300 --- Introduction to Embedded Systems
+  \item ELEC 3100 --- Signal Processing and Communications
+\end{itemize}
+\vspace{2pt}
+Delivered tutorial sessions, graded homework and exams, and mentored undergraduate final projects.
+
+% ---------------------- Honors & Awards ------------------------------
+\section{Honors \& Awards}
+\entry{HKUST Postgraduate Studentship (PGS)}{2022 -- Present}
+\entry{HKUST Academic Achievement Medal}{2022}
+\entry{HKUST School of Engineering Dean's List}{2018 -- 2021}
+
+% ---------------------- Professional Service -------------------------
+\section{Professional Service}
+\textbf{Journal Reviewer:}\ IEEE Wireless Communications Letters\\[3pt]
+\textbf{Conference Reviewer:}\ IEEE Global Communications Conference (GLOBECOM)
+
+% ---------------------- Technical Skills -----------------------------
+\section{Technical Skills}
+MATLAB, Python (PyTorch), LaTeX
+
+% ---------------------- Languages ------------------------------------
+\section{Languages}
+Mandarin (Native) \quad English (Professional) \quad Cantonese (Conversational)
+
+\end{document}
