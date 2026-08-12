@@ -8,6 +8,11 @@ Thumbs.db
 # macOS metadata
 ._*
 
+# Private job-search materials — NEVER push (public Pages repo)
+job_search/
+cv_industrial/
+cv_examples/
+
 # LaTeX build artifacts (keep the .pdf, drop the rest)
 *.aux
 *.log
