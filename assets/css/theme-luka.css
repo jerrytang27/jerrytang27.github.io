@@ -19,6 +19,9 @@ body.theme-luka *::after {
 }
 
 :root {
+  --luka-font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --luka-font-serif: "Source Serif 4", "Tiempos Text", Georgia, "Times New Roman", serif;
+  --luka-font: var(--luka-font-sans);
   --luka-bg: #faf9f7;
   --luka-text: #3d3929;
   --luka-accent: #c2714f;
@@ -56,6 +59,10 @@ body.theme-luka *::after {
   --luka-footer-border: rgba(226, 138, 103, 0.15);
 }
 
+[data-font="serif"] {
+  --luka-font: var(--luka-font-serif);
+}
+
 [data-theme="light"] {
   --luka-bg: #faf9f7;
   --luka-text: #3d3929;
@@ -71,7 +78,7 @@ body.theme-luka *::after {
 body.theme-luka {
   background: var(--luka-bg);
   color: var(--luka-text);
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--luka-font);
   font-size: 16px;
   line-height: 1.65;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -140,6 +147,23 @@ body.theme-luka .theme-toggle {
 body.theme-luka .theme-toggle:hover {
   background: var(--luka-border);
   color: var(--luka-accent);
+}
+
+body.theme-luka .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* The "Aa" previews the font you would switch to */
+body.theme-luka .font-toggle span {
+  font-family: var(--luka-font-serif);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+[data-font="serif"] body.theme-luka .font-toggle span {
+  font-family: var(--luka-font-sans);
 }
 
 body.theme-luka .wrapper {

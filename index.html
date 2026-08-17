@@ -11,7 +11,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/a860a211d3.js" crossorigin="anonymous"></script>
@@ -27,6 +27,9 @@
         <a class="nav-cv" href="assets/cv/cv.pdf" target="_blank" rel="noopener">CV</a>
       </div>
       <div class="nav-right">
+        <button id="fontToggle" class="theme-toggle font-toggle" title="Toggle serif font" aria-label="Toggle serif font">
+          <span>Aa</span>
+        </button>
         <button id="themeToggle" class="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
           <i class="fa-solid fa-moon"></i>
         </button>
@@ -229,6 +232,20 @@
       themeToggle.addEventListener('click', function() {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         setTheme(!isDark);
+      });
+
+      const fontToggle = document.getElementById('fontToggle');
+
+      function setFont(isSerif) {
+        document.documentElement.setAttribute('data-font', isSerif ? 'serif' : 'sans');
+        localStorage.setItem('font', isSerif ? 'serif' : 'sans');
+      }
+
+      setFont(localStorage.getItem('font') !== 'sans');
+
+      fontToggle.addEventListener('click', function() {
+        const isSerif = document.documentElement.getAttribute('data-font') === 'serif';
+        setFont(!isSerif);
       });
 
       if ('IntersectionObserver' in window) {
